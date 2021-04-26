@@ -1,0 +1,16 @@
+{
+  "name": "parse-chat-kata",
+  "version": "1.0.0",
+  "description": "",
+  "main": "chatParser.js",
+  "scripts": {
+    "start": "node chatParser.js",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Andrea",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
