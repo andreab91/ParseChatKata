@@ -1,5 +1,5 @@
 function parse (chat) {
-  const regExp = /(\d\d:\d\d:\d\d (Customer|Agent) : (.+?(?=\.)).)/g;
+  const regExp = /(\d\d:\d\d:\d\d (.+?(?= : )) : (.+?(?=\.)).)/g
   const lines = chat.match(regExp)
 
   return lines.map(parseLine)
@@ -7,18 +7,14 @@ function parse (chat) {
 
 function parseLine (line) {
   const [mention, sentence] = line.split(' : ')
-  const [date,] = mention.split(' ')
+  const [date, type] = mention.split(/ (.+)?/, 2)
 
   return {
     'date': date,
     'mention': mention + ' : ',
     'sentence': sentence,
-    'type': isCustomer(line) ? 'customer' : 'agent'
+    'type': type.includes('Customer') || type.includes('Agent') ? type.toLowerCase() : type
   }
-}
-
-function isCustomer (line) {
-  return line.includes('Customer')
 }
 
 module.exports = parse
