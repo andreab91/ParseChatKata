@@ -1,5 +1,6 @@
 function parse (chat) {
-  const lines = chat.split('\n')
+  const regExp = /(\d\d:\d\d:\d\d (Customer|Agent) : (.+?(?=\.)).)/g;
+  const lines = chat.match(regExp)
 
   return lines.map(parseLine)
 }
