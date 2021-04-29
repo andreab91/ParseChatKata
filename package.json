@@ -2,9 +2,9 @@
   "name": "parse-chat-kata",
   "version": "1.0.0",
   "description": "",
-  "main": "chatParser.js",
+  "main": "src/chatParser.js",
   "scripts": {
-    "start": "node chatParser.js",
+    "start": "node src/chatParser.js",
     "test": "jest"
   },
   "keywords": [],

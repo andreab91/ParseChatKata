@@ -1,4 +1,4 @@
-const parse = require('./chatParser')
+const parse = require('../src/chatParser')
 
 describe('chat parser tests', () => {
   describe('Step 1 (single sentence)', () => {
